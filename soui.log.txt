@@ -1,0 +1,37 @@
+﻿============================ generator-cg-angular ============================
+Getting Started
+	Prerequisites: Node, Grunt, Yeoman, and Bower. Once Node is installed, do:
+		npm install -g grunt-cli yo bower
+	Next, install this generator:
+		npm install -g generator-cg-angular
+	To create a project:
+		mkdir MyNewAwesomeApp
+		cd MyNewAwesomeApp
+		yo cg-angular
+Grunt Tasks
+	grunt serve   #This will run a development server with watch & livereload enabled.
+	grunt test    #Run local unit tests.
+	grunt build   #Places a fully optimized (minified, concatenated, and more) in /dist
+Yeoman Subgenerators
+	yo cg-angular:directive my-awesome-directive
+	yo cg-angular:partial my-partial
+	yo cg-angular:service my-service
+	yo cg-angular:filter my-filter
+	yo cg-angular:module my-module
+	yo cg-angular:modal my-modal
+		The modal subgenerator is a convenient shortcut to create partials that work as modals for Bootstrap v3.1 and Angular-UI-Bootstrap v0.10 (both come preconfigured with this generator). If you choose not to use either of these libraries, simply don't use the modal subgenerator.
+Submodules
+	Submodules allow you to more explicitly separate parts of your application. Use the yo cg-angular:module my-module command and specify a new subdirectory to place the module into. Once you've created a submodule, running other subgenerators will now prompt you to select the module in which to place the new component.
+Preconfigured Libraries
+	The new app will have a handful of preconfigured libraries included. This includes Angular 1.2, Bootstrap 3, AngularUI Bootstrap, AngularUI Utils, FontAwesome 4, JQuery 2, Underscore 1.5, LESS 1.6, and Moment 2.5. 
+Build Process
+	The project will include a ready-made Grunt build that will:
+		Build all the LESS files into one minified CSS file.
+		Uses grunt-angular-templates to turn all your partials into Javascript.
+		Uses grunt-ng-annotate to preprocess all Angular injectable methods and make them minification safe. Thus you don't have to use the array syntax.
+		Concatenates and minifies all Javascript into one file.
+		Replaces all appropriate script references in index.html with the minified CSS and JS files.
+		(Optionally) Minifies any images in /img.
+		Minifies the index.html.
+		Copies any extra files necessary for a distributable build (ex. Font-Awesome font files, etc).
+	The resulting build loads only a few highly compressed files. The build process uses grunt-dom-munger to pull script references from the index.html. This means that your index.html is the single source of truth about what makes up your app. Adding a new library, new controller, new directive, etc does not require that you update the build file. Also the order of the scripts in your index.html will be maintained when they're concatenated.
