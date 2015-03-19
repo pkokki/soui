@@ -1,5 +1,45 @@
 ﻿<section role="complementary">
-	<!-- https://sapui5.netweaver.ondemand.com/sdk/docs/api/symbols/sap.ui.ux3.ToolPopup.html -->
+	<!-- 
+		ToolPopup
+		A pop up which the user can open from the Shell's toolbar. 
+		Generally, the starting point would be an icon. 
+		A ToolPopup can have any content. 
+		
+		Properties
+			title : string
+			icon : URI
+			iconHover : URI
+			iconSelected : URI
+			modal : boolean (default: false)
+			inverted : boolean (default: true)
+			autoClose : boolean (default: false)
+			maxHeight : CSSSize
+			maxWidth : CSSSize
+			openDuration : int (default: 400)
+			closeDuration : int (default: 400)
+		Arrays
+			buttons : Control[]
+			content : Control[]
+		Events
+			open // Event is fired when the pop up opens
+			opened // Event is being fired after the ToolPopup has been opened.
+			enter // Event is fired whenever the user clicks the Enter or the Return key inside the pop up
+			close // Event is fired when the pop up closes because the user pressed Escape or the ToolPopup Button in the Shell.
+			closed // event is fired after the ToolPopup has finished its closing animation. It is called for EVERY close, regardless of whether the user has triggered the close or whether the ToolPopup was closed via API call.
+		Methods
+			open(my?, at?) // 
+			close(bPreventRestoreFocus) // Closes the pop up. Can be called by the Shell when the pop up's button is clicked again; or by the application when the interaction in the pop up has been completed or canceled.
+			isOpen() : boolean
+			
+			addButton(oButton) // Adds some button into the aggregation named buttons.
+			addContent(oContent) // Adds some content into the aggregation named content.
+			destroyButtons()
+			destroyContent()
+			indexOfButton(oButton)
+			indexOfContent(oContent) 
+			insertButton(oButton, iIndex)
+			...
+	-->
 	<div role="toolbar" aria-describedby="shell-toolbarGeneric">
 		<span id="shell-toolbarGeneric" style="display:none;">Provides access to various generic tools</span>
 		<ul>
