@@ -1,0 +1,31 @@
+﻿<section role="complementary">
+	<!-- https://sapui5.netweaver.ondemand.com/sdk/docs/api/symbols/sap.ui.ux3.ToolPopup.html -->
+	<div role="toolbar" aria-describedby="shell-toolbarGeneric">
+		<span id="shell-toolbarGeneric" style="display:none;">Provides access to various generic tools</span>
+		<ul>
+			<li ng-show="{{::settings.showSearchTool}}" title="Search">Search</li>
+			<li ng-show="{{::settings.showFeederTool}}" title="Comment">Comment</li>
+		</ul>
+	</div>
+	<div role="toolbar" aria-describedby="shell-toolbarCustom">
+		<span id="shell-toolbarCustom" style="display:none;">Provides access to custom application tools</span>
+		<ul>
+			<li ng-repeat="item in settings.toolPopups" title="{{item.tooltip}}">{{item.title}}</li>
+		</ul>
+	</div>
+	
+	<div style="display:none;" role="dialog" aria-labelledby="shell-toolbar-TOOLNAME-title shell-toolbar-TOOLNAME-acc">
+		<span style="display:none;" id="shell-toolbar-TOOLNAME-acc">To close dialog, press ESC</span>
+		<h1 style="display:none;" id="shell-toolbar-TOOLNAME-title">The title</h1>
+		<div id="shell-toolbar-TOOLNAME-content">
+			<span tabindex="-1" role="document">
+				The content
+			</span>
+		</div>
+		<div id="shell-toolbar-TOOLNAME-title-separator"></div>
+		<div id="shell-toolbar-TOOLNAME-buttons-separator"></div>
+		<div id="shell-toolbar-TOOLNAME-buttons">
+			<button type="button" role="button" tabindex="0">Cancel</button>
+		</div>
+	</div>
+</section>

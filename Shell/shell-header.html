@@ -1,0 +1,10 @@
+﻿<header role="banner">
+	<img src="{{::settings.appIcon}}" alt="{{::settings.appIconTooltip}}" title="{{::settings.appIconTooltip}}">
+	<div title="{{::settings.appTitle}}">{{::settings.appTitle}}</div>
+	
+	<ul>
+		<li ng-repeat="item in settings.headerItems" title="{{item.tooltip}}">{{item.text}}</li>
+		<li><a ng-show="{{::settings.showLogoutButton}}" ng-click="logout()"
+			title="Logout" tabindex="0" role="button">Logout</a></li>
+	</ul>
+</header>
